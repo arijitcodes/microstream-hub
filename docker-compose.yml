@@ -1,0 +1,7 @@
+version: "3.8"
+services:
+  microstream-hub:
+    build: .
+    ports:
+      - "3000:3000"
+    restart: unless-stopped

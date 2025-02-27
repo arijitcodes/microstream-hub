@@ -1,0 +1,18 @@
+{
+  "name": "microstream-hub",
+  "version": "1.0.0",
+  "description": "Microstream Hub for managing WebSocket communication",
+  "main": "src/hub.js",
+  "scripts": {
+    "start": "node src/hub.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arijitcodes/microstream-hub.git"
+  },
+  "author": "Arijit Banerjee <arijit.codes@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "socket.io": "^4.5.0"
+  }
+}
