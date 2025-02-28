@@ -1,4 +1,4 @@
-# MicroStream Hub
+# MicroStream Hub 🏢
 
 The central hub for Microstream, a lightweight, real-time communication system for microservices. Routes messages between services, handles service discovery, and ensures seamless communication with WebSockets. Perfect for building scalable, event-driven architectures.
 
@@ -32,58 +32,79 @@ License: [MIT](./LICENSE)
 
 <hr>
 
-## Table of Contents
+## Table of Contents 📚
 
-- [Features](#features)
-- [Installation](#installation)
-- [Running Locally](#running-locally)
-- [Running via Docker](#running-via-docker)
-- [Client SDK](#client-sdk)
-- [Author](#author)
-- [Contributing](#contributing)
-- [License](#license)
-
-<hr>
-
-## Features
-
-- Central WebSocket server for real-time communication between microservices.
-- Service discovery and registration.
-- Request routing and response handling.
-- Heartbeat mechanism to detect and remove inactive services.
-- Configurable logging for better observability.
-- Real-time inter-service communication using WebSockets.
-- Synchronous request-response pattern without HTTP overhead.
-- Auto-discovery and connection management.
-- Configurable logging for better observability.
+- [Features ✨](#features-✨)
+- [Running via Docker 🐳](#running-via-docker-🐳)
+- [Running Locally 🏃‍♂️](#running-locally-🏃‍♂️)
+- [Client SDK 🚀](#client-sdk-🚀)
+- [Author 👨‍💻](#author-👨‍💻)
+- [Contributing 🤝](#contributing-🤝)
+- [License 📜](#license-📜)
 
 <hr>
 
-## Installation
+## Features ✨
 
-```bash
-npm install
-```
-
-<hr>
-
-## Running Locally
-
-```bash
-node src/hub.js
-```
+- 🏢 Central WebSocket server for real-time communication between microservices.
+- 🔗 Service discovery and registration.
+- 📡 Request routing and response handling.
+- ❤️ Heartbeat mechanism to detect and remove inactive services.
+- 📊 Configurable logging for better observability.
+- 🔄 Real-time inter-service communication using WebSockets.
+- ⚡ Synchronous request-response pattern without HTTP overhead.
+- 🔍 Auto-discovery and connection management.
+- 📊 Configurable logging for better observability.
 
 <hr>
 
-## Running via Docker
+## Running via Docker 🐳
 
 ```bash
 docker compose up --build
 ```
 
+To change the port in Docker Compose, you can set the `PORT` environment variable in the `docker-compose.yml` file:
+
+```yaml
+version: "3.8"
+services:
+  microstream-hub:
+    build: .
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      - PORT=3000
+    restart: always
+```
+
 <hr>
 
-## Client SDK
+## Running Locally 🏃‍♂️
+
+### Installation 🛠️
+
+```bash
+npm install
+```
+
+### Running the Hub
+
+```bash
+node src/hub.js
+```
+
+### Configuration Example
+
+To change the port, you can set the `PORT` environment variable:
+
+```bash
+PORT=4000 node src/hub.js
+```
+
+<hr>
+
+## Client SDK 🚀
 
 We also provide a client SDK for easy integration with the MicroStream Hub.
 
@@ -92,7 +113,7 @@ We also provide a client SDK for easy integration with the MicroStream Hub.
 
 <hr>
 
-## Author
+## Author 👨‍💻
 
 Author: [Arijit Banerjee](https://www.github.com/arijitcodes)
 
@@ -111,13 +132,13 @@ Email: arijit.codes@gmail.com
 
 <hr>
 
-## Contributing
+## Contributing 🤝
 
 We welcome contributions! Please see our [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines on how to contribute to this project.
 
 <hr>
 
-## License
+## License 📜
 
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
