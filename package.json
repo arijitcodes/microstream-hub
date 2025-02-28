@@ -7,7 +7,8 @@
     "start": "node src/hub.js",
     "commit": "cz",
     "packGithubBuild": "rm -rf ./microstream-hub.tar.gz && tar -cvzf microstream-hub.tar.gz src CHANGELOG.md README.md LICENSE CONTRIBUTING.md package.json",
-    "release": "npm run packGithubBuild && semantic-release"
+    "release": "npm run packGithubBuild && semantic-release",
+    "postrelease": "bun install && npm install"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^11.0.1",
+    "@semantic-release/npm": "^12.0.1",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
     "semantic-release": "^24.2.3"

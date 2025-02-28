@@ -24,6 +24,12 @@ module.exports = {
       },
     ],
     [
+      "@semantic-release/npm",
+      {
+        npmPublish: false, // Set to false if you don't want to publish to npm
+      },
+    ],
+    [
       "@semantic-release/github",
       {
         assets: [
