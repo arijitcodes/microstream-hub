@@ -7,8 +7,7 @@
     "start": "node src/hub.js",
     "commit": "cz",
     "packGithubBuild": "rm -rf ./microstream-hub.tar.gz && tar -cvzf microstream-hub.tar.gz src CHANGELOG.md README.md LICENSE CONTRIBUTING.md package.json",
-    "release": "npm run packGithubBuild && semantic-release",
-    "postrelease": "bun install && npm install"
+    "release": "npm run packGithubBuild && semantic-release"
   },
   "repository": {
     "type": "git",
