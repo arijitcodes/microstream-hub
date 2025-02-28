@@ -35,8 +35,7 @@ License: [MIT](./LICENSE)
 ## Table of Contents 📚
 
 - [Features ✨](#features-✨)
-- [Running via Docker 🐳](#running-via-docker-🐳)
-- [Running Locally 🏃‍♂️](#running-locally-🏃‍♂️)
+- [Deployment 🚀](#deployment-🚀)
 - [Client SDK 🚀](#client-sdk-🚀)
 - [Author 👨‍💻](#author-👨‍💻)
 - [Contributing 🤝](#contributing-🤝)
@@ -58,7 +57,9 @@ License: [MIT](./LICENSE)
 
 <hr>
 
-## Running via Docker 🐳
+## Deployment 🚀
+
+### Running via Docker 🐳
 
 ```bash
 docker compose up --build
@@ -75,26 +76,24 @@ services:
       - "${PORT:-3000}:3000"
     environment:
       - PORT=3000
-    restart: always
+    restart: unless-stopped
 ```
 
-<hr>
+### Running Locally 🏃‍♂️
 
-## Running Locally 🏃‍♂️
-
-### Installation 🛠️
+#### Installation 🛠️
 
 ```bash
 npm install
 ```
 
-### Running the Hub
+#### Running the Hub
 
 ```bash
 node src/hub.js
 ```
 
-### Configuration Example
+#### Configuration Example
 
 To change the port, you can set the `PORT` environment variable:
 
