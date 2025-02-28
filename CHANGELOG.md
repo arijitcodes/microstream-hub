@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/arijitcodes/microstream-hub/compare/v1.0.2...v1.0.3) (2025-02-28)
+
+
+### Bug Fixes
+
+✅ **package.json:** trying to fixe package.json version not being updated issue ([2a64c39](https://github.com/arijitcodes/microstream-hub/commit/2a64c3967101e8c345572e2a7acb88cef57af15e))
+
 ## [1.0.2](https://github.com/arijitcodes/microstream-hub/compare/v1.0.1...v1.0.2) (2025-02-28)
 
 
