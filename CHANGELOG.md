@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/arijitcodes/microstream-hub/compare/v1.0.3...v1.0.4) (2025-02-28)
+
+
+### Bug Fixes
+
+✅ **version:** still trying ti fix version update issue ([c12ac23](https://github.com/arijitcodes/microstream-hub/commit/c12ac23b1cbeb522d946af496991f8067f56c1c1))
+
 ## [1.0.3](https://github.com/arijitcodes/microstream-hub/compare/v1.0.2...v1.0.3) (2025-02-28)
 
 

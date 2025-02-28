@@ -1,6 +1,6 @@
 {
   "name": "microstream-hub",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Microstream Hub for managing WebSocket communication",
   "main": "src/hub.js",
   "scripts": {
