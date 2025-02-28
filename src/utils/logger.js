@@ -1,3 +1,5 @@
+const chalk = require("chalk");
+
 const levels = ["debug", "info", "warn", "error", "silent"];
 
 class Logger {
@@ -10,10 +12,33 @@ class Logger {
   }
 
   formatMessage(level, ...args) {
-    const timestamp = new Date().toISOString();
-    return `[MicroStream Hub][${timestamp}][${level.toUpperCase()}] ${args.join(
-      " "
-    )}`;
+    if (level === "silent") {
+      return ""; // Skip formatting for "silent" logs
+    }
+
+    const prefix = chalk.magenta(`[MicroStream Hub]`);
+    const timestamp = chalk.gray(`[${new Date().toISOString()}]`);
+
+    // Define levelLabel with a default value
+    const levelLabel =
+      {
+        debug: chalk.greenBright,
+        info: chalk.cyan,
+        warn: chalk.yellow,
+        error: chalk.red,
+      }[level] || chalk.white; // Default to white if level is invalid
+
+    const formattedLevel = levelLabel(`[${level.toUpperCase()}]`);
+    const message = args
+      .map((arg) =>
+        arg instanceof Error
+          ? arg.stack
+          : typeof arg === "object"
+          ? JSON.stringify(arg, null, 2)
+          : arg
+      )
+      .join(" ");
+    return `${prefix}${timestamp}${formattedLevel} ${message}`;
   }
 
   debug(...args) {
