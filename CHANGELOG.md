@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/arijitcodes/microstream-hub/compare/v1.0.1...v1.0.2) (2025-02-28)
+
+
+### Bug Fixes
+
+✅ **package.json:** added Keywords ([a8a6462](https://github.com/arijitcodes/microstream-hub/commit/a8a646292bebc106cc286fe81534331f9f6e6ff4))
+
 ## [1.0.1](https://github.com/arijitcodes/microstream-hub/compare/v1.0.0...v1.0.1) (2025-02-28)
 
 
