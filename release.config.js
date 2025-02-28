@@ -3,7 +3,7 @@ const { join } = require("path");
 
 module.exports = {
   branches: ["main"],
-  repositoryUrl: "git@github.com:arijitcodes/microstream-hub.git", // Update for the Hub
+  // repositoryUrl: "git@github.com:arijitcodes/microstream-hub.git", // Keep this only for local `npx semantic-release --dry-run` NOT FOR CI/CD ON GITHUB WORKFLOW - COmment it
   plugins: [
     "@semantic-release/commit-analyzer",
     [
