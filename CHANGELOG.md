@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/arijitcodes/microstream-hub/compare/v1.0.0...v1.0.1) (2025-02-28)
+
+
+### Bug Fixes
+
+✅ **readme:** updated Readme - to test version bump by semantic-release ([1cd8a43](https://github.com/arijitcodes/microstream-hub/commit/1cd8a43ac0a54903711a595c80937a9c93207f78))
+
 # 1.0.0 (2025-02-28)
 
 
