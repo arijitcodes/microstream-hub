@@ -40,7 +40,8 @@ io.on("connection", (socket) => {
       // socket.emit("response", { id: payload.id, error: `Service "${targetService}" not found` });
       socket.emit("response", {
         id: payload.id,
-        error: `Service "${targetService}" not found`,
+        // error: `Service "${targetService}" not found`,  // This was causing a crash in the client response handler because it was expecting a "data" key
+        data: { error: `Service "${targetService}" not found` }, // This is the correct way to handle the error - return a data object with an "error" key
       });
     }
   });
