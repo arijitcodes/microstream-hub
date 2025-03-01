@@ -1,3 +1,19 @@
+## [1.0.6](https://github.com/arijitcodes/microstream-hub/compare/v1.0.5...v1.0.6) (2025-03-01)
+
+
+### Bug Fixes
+
+✅ **hub.js:** prevent duplicate service registration in hub ([9b3168f](https://github.com/arijitcodes/microstream-hub/commit/9b3168fa1de4f74006a0c35763f0a1205fa3bd3d)), closes [#3](https://github.com/arijitcodes/microstream-hub/issues/3)  
+
+- Added socket.io middleware to validate service registration
+- Implemented service name uniqueness check during connection
+- Added standardized error response for duplicate registration attempts
+- Implemented socket cleanup for rejected connections
+- Added proper logging for duplicate registration attempts
+- Implemented automatic rejection of duplicate socket connection requests
+
+This prevents multiple services from registering with the same name, ensuring message routing integrity and system stability. Any duplicate connection attempts are automatically rejected at the connection level, providing enhanced security against unauthorized service impersonation. <br/><br/>
+
 ## [1.0.5](https://github.com/arijitcodes/microstream-hub/compare/v1.0.4...v1.0.5) (2025-03-01)
 
 
