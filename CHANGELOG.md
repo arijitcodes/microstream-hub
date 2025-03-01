@@ -1,3 +1,15 @@
+## [1.0.5](https://github.com/arijitcodes/microstream-hub/compare/v1.0.4...v1.0.5) (2025-03-01)
+
+
+### Bug Fixes
+
+✅ **hub:** fixing a bug for Issue [#2](https://github.com/arijitcodes/microstream-hub/issues/2) ([d18f58b](https://github.com/arijitcodes/microstream-hub/commit/d18f58be2a3329ef94757963ed2a5b1a78a4d658))  
+
+There was an issue where client was having trouble to handle error for a request to an Unknwon /
+Un-registered / Invalid service. There were proper detection and error - but the structure of the
+returned data / error was a bit mismatched.
+This should fix it. <br/><br/>
+
 ## [1.0.4](https://github.com/arijitcodes/microstream-hub/compare/v1.0.3...v1.0.4) (2025-02-28)
 
 
