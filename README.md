@@ -161,7 +161,7 @@ PORT=4000 node src/hub.js
 
 ## Client SDK 🚀
 
-We also provide a client SDK for easy integration with the MicroStream Hub.
+We provide a client SDK for easy integration with the MicroStream Hub.
 
 - [MicroStream Client SDK on npm](https://www.npmjs.com/package/microstream-client)
 - [MicroStream Client SDK Repository](https://github.com/arijitcodes/microstream-client)

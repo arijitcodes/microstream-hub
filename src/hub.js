@@ -8,6 +8,7 @@ const services = new Map(); // Stores connected services (serviceName -> { socke
 const pendingRequests = new Map(); // Stores pending requests (requestId -> senderSocketId)
 
 const logger = new Logger(process.env.LOG_LEVEL || "debug"); // Initialize logger
+const CustomError = require("./utils/customError"); // Import the custom error class
 
 /* 
   Socket.io Middleware Setup
@@ -36,11 +37,18 @@ io.use((socket, next) => {
     );
 
     const error = new Error("DUPLICATE_SERVICE_REGISTRATION");
+    /* 
+    // Set the error data to be passed to the client via data attribute in the error object - as it already comes with Error Class - we just overwrite it
     error.data = {
       code: "DUPLICATE_SERVICE_REGISTRATION",
       content:
         "Duplicate Service Registration Name! A service with the same name is already registered.",
-    };
+    }; */
+    error.data = new CustomError(
+      "DUPLICATE_SERVICE_REGISTRATION",
+      "Duplicate Service Registration Name! A service with the same name is already registered.",
+      { serviceName }
+    );
 
     // Set a flag to indicate that the connection was rejected
     socket.rejected = true;
@@ -93,17 +101,32 @@ io.on("connection", (socket) => {
       socket.emit("response", {
         id: payload.id,
         // error: `Service "${targetService}" not found`,  // This was causing a crash in the client response handler because it was expecting a "data" key
-        data: { error: `Service "${targetService}" not found` }, // This is the correct way to handle the error - return a data object with an "error" key
+        // data: { error: `Service "${targetService}" not found` }, // This is the correct way to handle the error - return a data object with an "error" key
+        data: {
+          error: new CustomError(
+            "TARGET_SERVICE_NOT_FOUND",
+            `Service "${targetService}" not found`,
+            { targetService, requestID: payload.id }
+          ),
+        },
       });
     }
   });
 
   // Handle responses
   socket.on("response", ({ id, response }) => {
-    // Forward the response back to the requesting service
-    logger.debug(`Received response for request ${id}`, response);
-
     const requestSenderSockerID = pendingRequests.get(id);
+
+    const requestSenderServiceName = Array.from(services).find(
+      ([serviceName, { socketId, lastHeartbeat }]) =>
+        socketId === requestSenderSockerID
+    )[0];
+
+    // Forward the response back to the requesting service
+    logger.debug(
+      `Received response from ${serviceName} to ${requestSenderServiceName} for request ${id}`,
+      response
+    );
 
     if (requestSenderSockerID) {
       // Emit the response only to the requesting client
