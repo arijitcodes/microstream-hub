@@ -1,3 +1,17 @@
+# [1.1.0](https://github.com/arijitcodes/microstream-hub/compare/v1.0.6...v1.1.0) (2025-03-02)
+
+
+### Features
+
+✅ implement standardized error handling system ([ac3fb73](https://github.com/arijitcodes/microstream-hub/commit/ac3fb73b52c36c9d71f56aa1100d5487b4e8b2d8))  
+
+- Implement structured error response format
+- Add error code pattern for service registration
+- Standardize error handling in socket middleware
+- Add type checking for Error and CustomError instances
+- Ensure consistent UNKNOWN error fallback
+- Updated documentation <br/><br/>
+
 ## [1.0.6](https://github.com/arijitcodes/microstream-hub/compare/v1.0.5...v1.0.6) (2025-03-01)
 
 
