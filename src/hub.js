@@ -102,7 +102,7 @@ io.on("connection", (socket) => {
         id: payload.id,
         // error: `Service "${targetService}" not found`,  // This was causing a crash in the client response handler because it was expecting a "data" key
         // data: { error: `Service "${targetService}" not found` }, // This is the correct way to handle the error - return a data object with an "error" key
-        data: {
+        response: {
           error: new CustomError(
             "TARGET_SERVICE_NOT_FOUND",
             `Service "${targetService}" not found`,
@@ -130,7 +130,7 @@ io.on("connection", (socket) => {
 
     if (requestSenderSockerID) {
       // Emit the response only to the requesting client
-      io.to(requestSenderSockerID).emit("response", { id, data: response });
+      io.to(requestSenderSockerID).emit("response", { id, response });
       pendingRequests.delete(id); // Clean up
     } else {
       logger.warn(`No pending request found for ID ${id}`);
