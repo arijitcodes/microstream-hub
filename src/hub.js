@@ -115,11 +115,11 @@ io.on("connection", (socket) => {
 
   // Handle responses
   socket.on("response", ({ id, response }) => {
-    const requestSenderSockerID = pendingRequests.get(id);
+    const requestSenderSocketID = pendingRequests.get(id);
 
     const requestSenderServiceName = Array.from(services).find(
       ([serviceName, { socketId, lastHeartbeat }]) =>
-        socketId === requestSenderSockerID
+        socketId === requestSenderSocketID
     )[0];
 
     // Forward the response back to the requesting service
@@ -128,9 +128,9 @@ io.on("connection", (socket) => {
       response
     );
 
-    if (requestSenderSockerID) {
+    if (requestSenderSocketID) {
       // Emit the response only to the requesting client
-      io.to(requestSenderSockerID).emit("response", { id, response });
+      io.to(requestSenderSocketID).emit("response", { id, response });
       pendingRequests.delete(id); // Clean up
     } else {
       logger.warn(`No pending request found for ID ${id}`);
