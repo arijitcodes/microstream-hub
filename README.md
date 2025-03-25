@@ -54,7 +54,6 @@ License: [MIT](./LICENSE)
 - 🔄 Real-time inter-service communication using WebSockets.
 - ⚡ Synchronous request-response pattern without HTTP overhead.
 - 🔍 Auto-discovery and connection management.
-- 📊 Configurable logging for better observability.
 
 <hr>
 
