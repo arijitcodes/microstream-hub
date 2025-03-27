@@ -1,5 +1,9 @@
 # MicroStream Hub 🏢
 
+<div align="center">
+   <img src="https://iamarijit.dev/img/projects/MicroStream-Icon.png" height="350"/>
+</div>
+
 The central hub for Microstream, a lightweight, real-time communication system for microservices. Routes messages between services, handles service discovery, and ensures seamless communication with WebSockets. Perfect for building scalable, event-driven architectures.
 
 Author: [Arijit Banerjee](#author)  
